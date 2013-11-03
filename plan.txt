@@ -8,7 +8,7 @@
 - spell check? 
 - extract :) :/ :( as token
 - digits are important but can be tricky. extract digits before "degree"
-
+- verb tense can indicate "past" or "current" wether. something need to be done before stemming
 
 >>Generate tf-idf marix
 n-gram?
