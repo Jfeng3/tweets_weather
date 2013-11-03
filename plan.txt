@@ -1,0 +1,5 @@
+>>Generate tf-idf marix
+
+>>Generate extra info columns--sentiment, weather dictionary, time dictionary
+
+>>model/==>feature selection
