@@ -1,4 +1,17 @@
+>>Examine raw data
+
+:::::: decide how to use state (geographical info)
+- as a discrete factor first?
+
+:::::: clean data
+- remove @mention {link} non utf8 symbol
+- spell check? 
+- extract :) :/ :( as token
+- digits are important but can be tricky. extract digits before "degree"
+
+
 >>Generate tf-idf marix
+n-gram?
 
 >>Generate extra info columns--sentiment, weather dictionary, time dictionary
 
