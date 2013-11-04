@@ -4,11 +4,15 @@
 - as a discrete factor first?
 
 :::::: clean data
+---------------------------------General-----------------------------------------
 - remove @mention {link} non utf8 symbol
 - spell check? 
+--------------------------------Sentiment----------------------------------------
 - extract :) :/ :( as token
+---------------------------------Weather-----------------------------------------
 - digits are important but can be tricky. extract digits before "degree"
-- verb tense can indicate "past" or "current" wether. something need to be done before stemming
+-----------------------------------When------------------------------------------
+- verb tense/suffixes can indicate "past" or "current" wether:i.e.  was-past is-current rained-past raining-current something need to be done before stemming
 
 >>Generate tf-idf marix
 n-gram?
