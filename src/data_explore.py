@@ -3,8 +3,12 @@ import numpy as np
 import nltk
 from collections import Counter
 import tweet_stop_words
+import nlp
+import os
 
-train_data = pd.read_csv("train.csv")
+data_dir = "../data"
+src_dir  = "../src"
+train_data = pd.read_csv(os.path.join(data_dir,"train.csv"))
 texts = []
 for i in range(train_data.shape[0]):
     tokens = nltk.word_tokenize(train_data.tweet[i])
@@ -19,8 +23,8 @@ collection = nltk.TextCollection(texts)
 print "Created a collection of", len(collection), "terms."
 
 #get a list of unique terms
-unique_terms = list(set(collection))
-print "Unique terms found: ", len(unique_terms)
+unique_terms_raw = list(set(collection))
+print "Unique terms found: ", len(unique_terms_raw)
 
 word_list = [word for word_list in texts for word in word_list]
 word_dict = Counter(word_list)
@@ -30,6 +34,12 @@ common_word_frame.columns = [["term","count"]]
 common_word_frame.head(20)
 stopwords = tweet_stop_words.get_tweet_stopwords()
 common_word_frame = tweet_stop_words.remove_tweet_stopwords(common_word_frame, stopwords)
+terms = list(common_word_frame['term'])
+
+### And here we actually call the function and create our array of vectors.
+vectors = [np.array(nlp.TFIDF(f,terms,collection)) for f in texts]
+
+
 
 # remove stopwords
 
