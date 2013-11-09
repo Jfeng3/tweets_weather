@@ -1,2 +1,0 @@
-# i am calculating the tf, idf, it takes long time. roughly 10 hours. 
-Is this reasonable? 
